@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom"; 
+import { useState } from 'react'
 import './App.css'
 
-export default function Nav( {homePage} ) {
+export default function Nav( { username, setUser} ) {
+    const navigate = useNavigate()
+
+    const logout = () => {
+        localStorage.removeItem('token')
+        setUser({})
+        navigate('/')
+    };
+
 
     return (
 
@@ -14,9 +23,16 @@ export default function Nav( {homePage} ) {
             <Link to = '/search'> 
                 <div className  = 'search'> Search </div>
             </Link>
-            <Link to = '/login'>
-                <div className = 'login'> Login </div>
-            </Link>
+
+            <div className = 'login'>
+            {username ? (
+                <li onClick = {logout} >
+                    <Link to = "/login"> Logout </Link>
+                </li>
+            ) : (
+                <Link to='/login'> Login</Link>
+            )}
+            </div>
         </div>
 
     )

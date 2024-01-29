@@ -1,5 +1,4 @@
 
-
 import axios from 'axios'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
@@ -20,7 +19,7 @@ export default function Login ({ setUser }) {
     }
     
     const handleSubmit = async (e) => {
-        e.preventDefault 
+        e.preventDefault()
 
         try {
             const response = await axios.post('/auth/login', form)
@@ -33,7 +32,7 @@ export default function Login ({ setUser }) {
 
             localStorage.setItem("token", token)
 
-            const userResponse = axios.get('/api/users' , {
+            const userResponse = await axios.get('/api/users' , {
                 headers: {
                     Authorization: token
                 }
@@ -42,7 +41,7 @@ export default function Login ({ setUser }) {
             setUser(userResponse.data) 
 
             navigate('/profile')
-            
+
         } catch (err) {
             console.log(err.response.data.error)
             alert(err.response.data.error)

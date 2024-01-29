@@ -22,7 +22,7 @@ body {
   margin-top: 200px;
 }
 
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,6 +36,22 @@ body {
   margin-bottom: 0; 
 
 
+} */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: bisque;
+  color: white;
+  padding: 5px; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  z-index: 1000; 
+  position: relative; 
+  margin-bottom: 0; 
+  list-style-type: none;
 }
 
 
@@ -224,3 +240,36 @@ label {
 .login-here {
   font-family: Helvetica , sans-serif;
 }
+
+
+.profile-page {
+  background-color: white;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  max-width: 500px;
+  margin-left: 475px;
+  margin-top: 200px;
+  border-radius: 60px;
+}
+
+.profile-title {
+  font-size: 40px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: Helvetica , sans-serif;
+}
+
+.profile-info {
+  font-family: Helvetica , sans-serif;
+  font-size: 25px;
+  
+}
+
+.login {
+  cursor: pointer;
+}
+
