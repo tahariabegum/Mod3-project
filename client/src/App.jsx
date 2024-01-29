@@ -63,10 +63,11 @@ function App() {
           <>
             <Route path = '/profile' element = {<Profile username = {user.username} email = {user.email} />} />
             {!isLoading && <Route path = '*' element = {<Navigate to = "/" />} /> }
+            <Route path = '/search' element = { <SearchBook /> } />
           </>
            : 
           <>
-            <Route path = '/search' element = { <SearchBook /> } />
+            
             <Route path = '/login' element = { <Login setUser = {setUser} /> } />
             <Route path = '/register' element = { <Register setUser = {setUser} /> } />
             {!isLoading && <Route path = "*" element = {<Navigate to = "/login" />} />}
