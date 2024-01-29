@@ -40,7 +40,7 @@ export default function Register ({ setUser }) {
                 }
             })
 
-            setUser(userReponse.data) 
+            setUser(userResponse.data) 
 
             navigate('/login')
 
