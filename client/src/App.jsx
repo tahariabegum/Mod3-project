@@ -9,6 +9,7 @@ import SearchBook from './SearchBook'
 
 import Login from '../pages/Login'
 import Register from '../pages/Register'
+import Profile from '../pages/Profile'
 
 import './App.css'
 
@@ -60,6 +61,7 @@ function App() {
           <Route path = '/search' element = { <SearchBook /> } />
           <Route path = '/login' element = { <Login setUser = {setUser} /> } />
           <Route path = '/register' element = { <Register setUser = {setUser} /> } />
+          <Route path = '/profile' element = {<Profile username = {user.username} email = {user.email} />} />
       </Routes>
     </>
   )

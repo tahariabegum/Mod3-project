@@ -21,6 +21,32 @@ export default function Login ({ setUser }) {
     
     const handleSubmit = async (e) => {
         e.preventDefault 
+
+        try {
+            const response = await axios.post('/auth/login', form)
+            const token = response.data.token
+
+            if (!token) {
+                setForm(emptyForm)
+                return
+            }
+
+            localStorage.setItem("token", token)
+
+            const userResponse = axios.get('/api/users' , {
+                headers: {
+                    Authorization: token
+                }
+            })
+
+            setUser(userResponse.data) 
+
+            navigate('/profile')
+            
+        } catch (err) {
+            console.log(err.response.data.error)
+            alert(err.response.data.error)
+        }
     }
 
 
