@@ -14,6 +14,9 @@ export default function Nav( {homePage} ) {
             <Link to = '/search'> 
                 <div className  = 'search'> Search </div>
             </Link>
+            <Link to = '/login'>
+                <div className = 'login'> Login </div>
+            </Link>
         </div>
 
     )

@@ -24,12 +24,11 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: flex-start;
-  /* position: fixed; */
+  justify-content: space-between;
+  align-items: center;
   background-color: bisque;
   color: white;
   padding: 5px; 
-  /* font-size: 40px; */
   top: 0; 
   left: 0; 
   right: 0; 
@@ -49,9 +48,19 @@ body {
 
 .search {
   margin-top: 9px;
+  margin-left: auto;
   font-size: 18px;
   color: black; 
   font-family: Helvetica , sans-serif;
+}
+
+.login {
+  /* margin-top: 9px; */
+  font-size: 18px;
+  color: black; 
+  font-family: Helvetica , sans-serif;
+  margin-left: auto; 
+  margin-right: 20px;
 }
 
 .container {
@@ -77,12 +86,6 @@ form {
   /* padding: 30px 25px;  */
   border-radius: 40px; 
   margin: 0; 
-  /* max-width: 500px; 
-  box-sizing: border-box;
-  padding: 30px 25px;
-  background-color: white;
-  border-radius: 40px;
-  margin: 0;  */
 }
 
 input {
@@ -150,4 +153,42 @@ button {
   margin-right: 100px;
   text-align: left;
   font-family:  Andale Mono, monospace
+}
+
+.login-page {
+  background-color: white;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  max-width: 500px;
+  margin-left: 500px;
+  margin-top: 50px;
+  border-radius: 60px;
+}
+
+.login-form {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 50px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: Helvetica , sans-serif;
+}
+
+label {
+  font-family: Helvetica , sans-serif;
+  font-size: 20px;
+}
+
+
+.register-here {
+  font-family: Helvetica , sans-serif;
 }
