@@ -11,6 +11,8 @@ function authorize  (req, res, next) {
             return res.status(400).json({ error: "No token" })
         }
 
+        token = token.replace("Bearer ", '')
+
         // Check if token is valid and not expired 
 
         const payload = jwt.verify(token, process.env.JWT_SECRET)
