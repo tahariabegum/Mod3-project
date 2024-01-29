@@ -25,28 +25,34 @@ export default function Register ({ setUser }) {
         try {
             
             const response = await axios.post('/auth/register', form)
-            const token = response.data.token 
+            console.log(response)
+            const token = response.data?.token 
 
-            if (!token) {
+            if (token) {
+
+                localStorage.setItem('token', token)
+            
+                const userResponse = await axios.get('/api/users', {
+                    headers: {
+                        Authorization: token
+                    }
+                })
+
+                setUser(userResponse.data) 
+
+                // navigate('/login')
+
+            } else {
+
                 setForm(emptyForm)
                 return
+
             }
 
-            localStorage.setItem('token', token)
-            
-            const userResponse = await axios.get('/api/users', {
-                headers: {
-                    Authorization: token
-                }
-            })
-
-            setUser(userResponse.data) 
-
-            navigate('/login')
-
         } catch (err) {
-            console.log(err.response.data.error)
-            alert(err.response.data.error)
+            console.log(err.message)
+            // console.log(err?.response?.data?.error)
+            // alert(err?.response?.data?.error)
         }
     }
 

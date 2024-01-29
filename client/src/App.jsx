@@ -57,16 +57,9 @@ function App() {
       <Nav />
       <Routes>
         <Route path = '/' element = { < Home />} />
-        {loggedIn ?
-        <>
           <Route path = '/search' element = { <SearchBook /> } />
-        </>
-        :
-        <>
-          <Route path = '/login' element = { <Login /> } />
-          <Route path = '/register' element = { <Register /> } />
-        </>
-        }
+          <Route path = '/login' element = { <Login setUser = {setUser} /> } />
+          <Route path = '/register' element = { <Register setUser = {setUser} /> } />
       </Routes>
     </>
   )
