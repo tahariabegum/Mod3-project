@@ -6,6 +6,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import Nav from './Nav'
 import Home from './Home'
 import SearchBook from './SearchBook'
+import Register from '../pages/Register'
 
 import Login from '../pages/Login'
 // import Register from '../pages/Register'
@@ -28,6 +29,7 @@ function App() {
         <Route path = '/' element = { < Home />} />
         <Route path = '/search' element = { <SearchBook /> } />
         <Route path = '/login' element = { <Login /> } />
+        <Route path = '/register' element = { <Register /> } />
       </Routes>
     </>
   )

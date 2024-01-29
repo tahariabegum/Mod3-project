@@ -16,7 +16,7 @@ export default function Login ({ setUser }) {
     let [form, setForm] = useState(emptyForm)
 
     const handleChange = (e) => {
-        setForm ({...form, [e.target.name]: e.target.value})
+        setForm ({ ...form, [e.target.name]: e.target.value })
     }
     
     const handleSubmit = async (e) => {
@@ -57,7 +57,7 @@ export default function Login ({ setUser }) {
 
                 <br/> <br/>
 
-                <button> Submit </button>
+                <button className = 'submit'> Submit </button>
                 <p className='register-here'> Don't have an account? <a href = '/register'> Register Here </a></p>
             </form>
     
