@@ -9,6 +9,7 @@ import SearchBook from './SearchBook'
 
 // import BookReview from '../pages/BookReview'
 import ReviewList from '../pages/ReviewList'
+import CreateReview from '../pages/CreateReview'
 
 import Login from '../pages/Login'
 import Register from '../pages/Register'
@@ -68,6 +69,7 @@ function App() {
             {!isLoading && <Route path = '*' element = {<Navigate to = "/" />} /> }
             <Route path = '/search' element = { <SearchBook /> } />
             <Route path = '/reviews' element = { <ReviewList username = {user.username} />} />
+            <Route path = '/reviews/new' element = { <CreateReview username = {user.username} />} />
             {/* <Route path = '/reviews' element = { <BookReview/> }/> */}
           </>
            : 
