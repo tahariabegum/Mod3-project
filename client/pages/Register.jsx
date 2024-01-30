@@ -51,8 +51,8 @@ export default function Register ({ setUser }) {
 
         } catch (err) {
             console.log(err.message)
-            // console.log(err?.response?.data?.error)
-            // alert(err?.response?.data?.error)
+            console.log(err.response.data.error)
+            alert(err.response.data.error)
         }
     }
 

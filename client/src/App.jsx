@@ -67,7 +67,6 @@ function App() {
           </>
            : 
           <>
-            
             <Route path = '/login' element = { <Login setUser = {setUser} /> } />
             <Route path = '/register' element = { <Register setUser = {setUser} /> } />
             {!isLoading && <Route path = "*" element = {<Navigate to = "/login" />} />}
