@@ -12,6 +12,14 @@ const getAllReviews = async (req, res) => {
 }
 
 // Get Specific Review 
+const getReviewDetail = async (req, res) => {
+    try {
+        const review = await Review.findById(req.params.id)
+        res.status(200).json(review)
+    } catch (err) {
+        res.status(400).json({ error: err.message })
+    }
+}
 
 // New (Create New Entry)
 const newReview = async (req, res) => {
@@ -28,6 +36,7 @@ const newReview = async (req, res) => {
 
 module.exports = {
     getAllReviews,
+    getReviewDetail,
     newReview
 }
 

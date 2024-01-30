@@ -21,8 +21,10 @@ export default function ReviewDetail({ username }) {
 
     return (
         <div className = 'review-details'>
-            <h2 className='review-title'> {review.title} </h2>
-            <p> By: {username} </p>
+            <div>
+                <h2 className='review-title'> {review.title} </h2>
+                <p> By: {username} </p>
+            </div>
             <p> Author: {review.author} </p>
             <p> Genre: {review.genre} </p>
             <p> Pages: {review.pages} </p>
