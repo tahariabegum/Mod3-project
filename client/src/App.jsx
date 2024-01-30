@@ -7,7 +7,7 @@ import Nav from './Nav'
 import Home from '../pages/Home'
 import SearchBook from './SearchBook'
 
-// import BookReview from '../pages/BookReview'
+import ReviewDetail from '../pages/ReviewDetail'
 import ReviewList from '../pages/ReviewList'
 import CreateReview from '../pages/CreateReview'
 
@@ -70,7 +70,7 @@ function App() {
             <Route path = '/search' element = { <SearchBook /> } />
             <Route path = '/reviews' element = { <ReviewList username = {user.username} />} />
             <Route path = '/reviews/new' element = { <CreateReview username = {user.username} />} />
-            {/* <Route path = '/reviews' element = { <BookReview/> }/> */}
+            <Route path = '/reviews/:id' element = { <ReviewDetail username = {user.username} /> }/>
           </>
            : 
           <>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 export default function ReviewList({ username }) {
-    
+
     const navigate = useNavigate()
 
     const [reviews, setReviews] = useState([])
@@ -26,7 +26,7 @@ export default function ReviewList({ username }) {
             <button onClick={() => navigate('/reviews/new')}>Create New Book Review</button>
             {reviews.map((review) => (
                 <div key = {review._id}>
-                    <Link to = {`/review/${review._id}`}>
+                    <Link to = {`/reviews/${review._id}`}>
                         <h2> {review.title} </h2>
                     </Link>
                     <p> By {review.author} </p>
