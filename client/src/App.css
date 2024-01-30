@@ -64,6 +64,15 @@ body {
 
 .search {
   margin-top: 9px;
+  margin-right: 20px;
+  margin-left: auto;
+  font-size: 18px;
+  color: black; 
+  font-family: Helvetica , sans-serif;
+}
+
+.review {
+  margin-top: 9px;
   margin-left: auto;
   font-size: 18px;
   color: black; 

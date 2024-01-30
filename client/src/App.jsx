@@ -7,6 +7,8 @@ import Nav from './Nav'
 import Home from './Home'
 import SearchBook from './SearchBook'
 
+import BookReview from '../posts/BookReview'
+
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Profile from '../pages/Profile'
@@ -64,6 +66,7 @@ function App() {
             <Route path = '/profile' element = {<Profile username = {user.username} email = {user.email} />} />
             {!isLoading && <Route path = '*' element = {<Navigate to = "/" />} /> }
             <Route path = '/search' element = { <SearchBook /> } />
+            {/* <Route path = '/reviews' element = { <BookReview/> }/> */}
           </>
            : 
           <>
@@ -71,7 +74,8 @@ function App() {
             <Route path = '/register' element = { <Register setUser = {setUser} /> } />
             {!isLoading && <Route path = "*" element = {<Navigate to = "/login" />} />}
           </>
-        }   
+          }   
+
       </Routes>
     </>
   )
