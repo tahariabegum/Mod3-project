@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
 import Nav from './Nav'
-import Home from './Home'
+import Home from '../pages/Home'
 import SearchBook from './SearchBook'
 
-import BookReview from '../posts/BookReview'
+// import BookReview from '../pages/BookReview'
+import ReviewList from '../pages/ReviewList'
 
 import Login from '../pages/Login'
 import Register from '../pages/Register'
@@ -66,6 +67,7 @@ function App() {
             <Route path = '/profile' element = {<Profile username = {user.username} email = {user.email} />} />
             {!isLoading && <Route path = '*' element = {<Navigate to = "/" />} /> }
             <Route path = '/search' element = { <SearchBook /> } />
+            <Route path = '/reviews' element = { <ReviewList username = {user.username} />} />
             {/* <Route path = '/reviews' element = { <BookReview/> }/> */}
           </>
            : 

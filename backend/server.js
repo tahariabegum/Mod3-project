@@ -6,8 +6,9 @@ require ('dotenv').config()
 const mongoConfig = require('./config')
 mongoConfig()
 
-const authRoutes = require('./routes/authRoutes')
+const authRoutes = require ('./routes/authRoutes')
 const userRoutes = require ('./routes/userRoutes')
+const reviewRoutes = require ('./routes/reviewRoutes')
 
 const { authorize } = require ('./middleware/authMiddleware')
 
@@ -20,6 +21,7 @@ app.use(express.json())
 
 app.use('/auth', authRoutes)
 app.use('/api/users', authorize, userRoutes)
+app.use('/api/reviews', reviewRoutes)
 
 app.listen(PORT, () => {
     console.log('Listening on port: ' + PORT)
