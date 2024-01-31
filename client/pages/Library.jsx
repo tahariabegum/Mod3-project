@@ -1,3 +1,5 @@
+import './Library.css'
+
 import { useState, useEffect } from 'react'
 
 export default function Library ( { username} ) {
@@ -28,24 +30,28 @@ export default function Library ( { username} ) {
     }
     
     return(
-        <div className = 'book-data'>
-            <h1 className = 'lib-title'> {username}'s Library </h1>
-            <div>
+        <div className = 'lib-data'>
+            <div className = 'lib-title-cont'>
+                <h1 className = 'lib-title'> {username}'s Library </h1>
+            </div>
                 {books.map(book => (
-                    <div key = {book._id} className='book-cont'>
+                    <div key = {book._id} className='lib-cont'>
                         <img src = {book.thumbnail} alt = {book.title} className = 'book-img'/>
-                        <div className = 'book-det'>
+                        <div className = 'lib-det'>
                             <a href = {book.previewLink} >
                                 <h2> {book.title} </h2>
                             </a>
                             <p> {book.authors} </p>
-                            <p> {book.description} </p>
-                            <button onClick = {() => handleDelete(book._id)} className='delete-button'> Delete </button>  
+                            {/* <p> {book.description} </p> */}
+                        <div className = 'buttons'>
+                            <button onClick = {() => handleDelete(book._id)} className='delete-button'> Delete </button> 
+                            <button> Review Book </button> 
+                        </div> 
                         </div>
                     </div>   
                 ))}
             </div>
             
-        </div>
+       
     )
 }

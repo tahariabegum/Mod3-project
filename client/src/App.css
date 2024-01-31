@@ -401,15 +401,4 @@ label {
 .edit-form textarea {
   height: 100px; 
 }
-.lib-title {
-font-size: 40px;
-justify-content: center;
-display: flex;
-align-items: center;
-font-family: Helvetica , sans-serif;
-background-color: white;
-opacity: 0.7;
-border-radius: 60px;
-padding: 20px;
-}
 

@@ -21,7 +21,7 @@ export default function Nav( { username, setUser} ) {
                </div>
             </Link>
             <Link to = '/search'> 
-                <div className  = 'search'> Search </div>
+                <div className  = 'search'> Find A Book </div>
             </Link>
             <Link to = '/library'> 
                 <div className = 'library'> Library </div>
