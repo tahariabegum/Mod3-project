@@ -45,7 +45,7 @@ const deleteReview = async (req,res) => {
 // Update Review Entry
 const updateReview = async (req,res) => {
     try {
-        const review = await Review.findByIdAndUpdate(req.params.id, res.body)
+        const review = await Review.findByIdAndUpdate(req.params.id, req.body)
         res.json({ message: "Review successfully updated", review})
     } catch (err) {
         res.status(400).json({ error: err.message })

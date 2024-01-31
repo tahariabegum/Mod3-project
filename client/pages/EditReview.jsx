@@ -46,7 +46,7 @@ export default function EditReview() {
             });
             navigate('/reviews')
         } catch (err) {
-            console.log('Unable to create review: ', err.message)
+            console.log('Unable to update review: ', err.message)
         }
     }
 
