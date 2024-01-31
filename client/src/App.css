@@ -58,6 +58,16 @@ body {
 .review {
   margin-top: 9px;
   margin-left: auto;
+  margin-right: 20px;
+  font-size: 18px;
+  color: black; 
+  font-family: Helvetica , sans-serif;
+}
+
+.library {
+  margin-top: 9px;
+  margin-left: auto;
+  margin-right: 20px;
   font-size: 18px;
   color: black; 
   font-family: Helvetica , sans-serif;
@@ -391,3 +401,4 @@ label {
 .edit-form textarea {
   height: 100px; 
 }
+
