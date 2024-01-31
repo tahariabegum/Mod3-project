@@ -33,7 +33,9 @@ export default function ReviewList({ username }) {
 
     return (
         <div className='book-review-page'>
-            <h1> {username}'s Book Reviews </h1>
+            <div>
+                <h1 className='review-title'> {username}'s Book Reviews </h1>
+            </div>
             <button onClick={() => navigate('/reviews/new')}>Create New Book Review</button>
             {reviews.map((review) => (
                 <div key = {review._id}>
