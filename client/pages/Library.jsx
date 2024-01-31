@@ -43,7 +43,7 @@ export default function Library ( { username} ) {
                             </a>
                             <p> {book.authors} </p>
                             {/* <p> {book.description} </p> */}
-                        <div className = 'buttons'>
+                        <div className = 'lib-buttons'>
                             <button onClick = {() => handleDelete(book._id)} className='delete-button'> Delete </button> 
                             <button> Review Book </button> 
                         </div> 

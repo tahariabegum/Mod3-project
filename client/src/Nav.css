@@ -1,0 +1,58 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: bisque;
+    color: white;
+    padding: 5px; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1000; 
+    position: relative; 
+    margin-bottom: 0; 
+    list-style-type: none;
+  }
+  
+  
+  .home img{
+    width: 40px; 
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  
+  .search {
+    margin-top: 9px;
+    margin-right: 20px;
+    margin-left: auto;
+    font-size: 18px;
+    color: black; 
+    font-family: Helvetica , sans-serif;
+  }
+  
+  .review {
+    margin-top: 9px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 18px;
+    color: black; 
+    font-family: Helvetica , sans-serif;
+  }
+  
+  .library {
+    margin-top: 9px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 18px;
+    color: black; 
+    font-family: Helvetica , sans-serif;
+  }
+  
+  .login {
+    font-size: 18px;
+    color: black; 
+    font-family: Helvetica , sans-serif;
+    margin-left: auto; 
+    margin-right: 20px;
+  }
