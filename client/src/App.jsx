@@ -17,6 +17,7 @@ import Register from '../pages/Register'
 import Profile from '../pages/Profile'
 
 import './App.css'
+import FindBook from './FindBook'
 
 
 let key = import.meta.env.VITE_KEY
@@ -73,6 +74,7 @@ function App() {
             <Route path = '/reviews/new' element = { <CreateReview username = {user.username} />} />
             <Route path = '/reviews/:id' element = { <ReviewDetail username = {user.username} /> }/>
             <Route path = '/reviews/:id/edit' element = { <EditReview />} />
+            <Route path = '/library' element = { <FindBook /> } />
           </>
            : 
           <>

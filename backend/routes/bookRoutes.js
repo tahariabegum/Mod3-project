@@ -3,6 +3,6 @@ const router = express.Router()
 const bookControllers = require ('../controllers/bookControllers')
 
 
-router.post('/library', bookControllers.addBookToLibrary)
+router.post('/', bookControllers.addBookToLibrary)
 
 module.exports = router 
