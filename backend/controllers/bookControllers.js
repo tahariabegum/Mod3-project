@@ -21,7 +21,19 @@ const getAllBooks = async (req, res) => {
     }
 }
 
+// Delete Book from Library 
+const deleteBook = async (req,res) => {
+    try {
+        const book = await Book.findByIdAndDelete({ _id: req.params.id })
+        res.json({ message: "Book successfully deleted"})
+    } catch (err) {
+        res.status(400).json({ error: err.message })
+    }
+}
+
+
 module.exports = {
     addBookToLibrary,
-    getAllBooks
+    getAllBooks,
+    deleteBook
 }
