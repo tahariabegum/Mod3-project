@@ -14,4 +14,12 @@ router.get('/:id', reviewController.getReviewDetail)
 // Delete review 
 router.delete('/:id', reviewController.deleteReview)
 
+// Update review
+router.put('/:id', reviewController.updateReview)
+
+// Edit review 
+router.get('/:id/edit', reviewController.editReview)
+
+
+
 module.exports = router 

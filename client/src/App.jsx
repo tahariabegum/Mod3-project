@@ -10,6 +10,7 @@ import SearchBook from './SearchBook'
 import ReviewDetail from '../pages/ReviewDetail'
 import ReviewList from '../pages/ReviewList'
 import CreateReview from '../pages/CreateReview'
+import EditReview from '../pages/EditReview'
 
 import Login from '../pages/Login'
 import Register from '../pages/Register'
@@ -71,6 +72,7 @@ function App() {
             <Route path = '/reviews' element = { <ReviewList username = {user.username} />} />
             <Route path = '/reviews/new' element = { <CreateReview username = {user.username} />} />
             <Route path = '/reviews/:id' element = { <ReviewDetail username = {user.username} /> }/>
+            <Route path = '/reviews/:id/edit' element = { <EditReview />} />
           </>
            : 
           <>
