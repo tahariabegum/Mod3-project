@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom'
 export default function ReviewList({ username }) {
 
     const navigate = useNavigate()
-
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
@@ -20,6 +19,17 @@ export default function ReviewList({ username }) {
         getReviews()
     }, [])
 
+    const handleDelete = async(id) => {
+        try {
+            await fetch(`/api/reviews/${id}` , {
+                method: 'DELETE'
+            })
+            setReviews(reviews.filter((review) => review._id !==id))
+        } catch (err) {
+            console.log(err.message)
+        }
+    }
+
     return (
         <div className='book-review-page'>
             <h1> {username}'s Book Reviews </h1>
@@ -31,6 +41,7 @@ export default function ReviewList({ username }) {
                     </Link>
                     <p> By {review.author} </p>
                     <p> {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)} </p>
+                    <button onClick = {() => handleDelete(review._id)}> Delete </button>
                 </div>
             ))}
         </div>

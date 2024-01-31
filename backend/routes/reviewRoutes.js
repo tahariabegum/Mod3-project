@@ -5,10 +5,13 @@ const reviewController = require('../controllers/reviewControllers')
 // Get all reviews 
 router.get('/', reviewController.getAllReviews)
 
+// Create new review 
+router.post('/', reviewController.newReview)
+
 // Get specific(id) review 
 router.get('/:id', reviewController.getReviewDetail)
 
-// Create new review 
-router.post('/', reviewController.newReview)
+// Delete review 
+router.delete('/:id', reviewController.deleteReview)
 
 module.exports = router 

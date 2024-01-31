@@ -32,11 +32,21 @@ const newReview = async (req, res) => {
     }
 }
 
+// Delete Review Entry 
+const deleteReview = async (req,res) => {
+    try {
+        const review = await Review.findByIdAndDelete({ _id: req.params.id })
+        res.json({ message: "Review successfully deleted"})
+    } catch (err) {
+        res.status(400).json({ error: err.message })
+    }
+}
 
 
 module.exports = {
     getAllReviews,
     getReviewDetail,
-    newReview
+    newReview, 
+    deleteReview
 }
 
