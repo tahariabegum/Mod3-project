@@ -12,6 +12,8 @@ import ReviewList from '../pages/ReviewList'
 import CreateReview from '../pages/CreateReview'
 import EditReview from '../pages/EditReview'
 
+import Library from '../pages/Library'
+
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Profile from '../pages/Profile'
@@ -74,7 +76,7 @@ function App() {
             <Route path = '/reviews/new' element = { <CreateReview username = {user.username} />} />
             <Route path = '/reviews/:id' element = { <ReviewDetail username = {user.username} /> }/>
             <Route path = '/reviews/:id/edit' element = { <EditReview />} />
-            <Route path = '/library' element = { <FindBook /> } />
+            <Route path = '/library' element = { <Library username = {user.username} /> } />
           </>
            : 
           <>
