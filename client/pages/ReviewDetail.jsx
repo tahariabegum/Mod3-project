@@ -1,9 +1,12 @@
+import './Review.css'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 export default function ReviewDetail({ username }) {
     const {id} = useParams()
     const [review, setReview] = useState({})
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         const getReview = async() => {
@@ -31,6 +34,9 @@ export default function ReviewDetail({ username }) {
                 <p> Pages: {review.pages} </p>
                 <p className='review-rating'> Rating: {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</p>
                 <p> {review.review} </p>
+                <div>
+                    <button onClick = {() => navigate('/reviews')}className='back-button'> Back </button>
+                </div>
             </div>
         </div>
     )

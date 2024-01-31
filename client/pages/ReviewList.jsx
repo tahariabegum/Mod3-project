@@ -1,3 +1,5 @@
+import './Review.css'
+
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -33,19 +35,21 @@ export default function ReviewList({ username }) {
 
     return (
         <div className='book-review-page'>
-            <div>
-                <h1 className='review-title'> {username}'s Book Reviews </h1>
+            <div className='review-title-cont'>
+                <h1 className = 'review-title'> {username}'s Book Reviews </h1>
             </div>
-            <button onClick={() => navigate('/reviews/new')}>Create New Book Review</button>
+            <button onClick={() => navigate('/reviews/new')} className='create-review-button'> + Create New Book Review</button>
             {reviews.map((review) => (
-                <div key = {review._id}>
+                <div key = {review._id} className = 'review-content'>
                     <Link to = {`/reviews/${review._id}`}>
                         <h2> {review.title} </h2>
                     </Link>
-                    <p> By {review.author} </p>
+                    <p> By: {review.author} </p>
                     <p> {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)} </p>
-                    <button onClick = {() => navigate(`/reviews/${review._id}/edit`)}> Edit </button>
-                    <button onClick = {() => handleDelete(review._id)}> Delete </button>   
+                    <div className = 'review-buttons'>
+                        <button onClick = {() => navigate(`/reviews/${review._id}/edit`)} className='review-button'> Edit </button>
+                        <button onClick = {() => handleDelete(review._id)} className='review-button'> Delete </button>
+                    </div>  
                 </div>
             ))}
         </div>
