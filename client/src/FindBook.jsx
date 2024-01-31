@@ -1,10 +1,12 @@
 import './App.css'
 
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function FindBook( {search} ) {
     const [data, setData] = useState([])
     const key = import.meta.env.VITE_KEY
+    const navigate = useNavigate()
 
     useEffect (() => {
     
@@ -26,6 +28,30 @@ export default function FindBook( {search} ) {
     }
     }, [search])
 
+
+    const addBookToLibrary = async(book) => {
+        try {
+            const response = await fetch('/api/library', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: book.volumeInfo.title,
+                    authors: book.volumeInfo.authors,
+                    description: book.volumeInfo.description,
+                    thumbnail: book.volumeInfo.imageLinks.thumbnail,
+                    previewLink: book.volumeInfo.previewLink
+                })
+            })
+            const data = await response.json()
+            console.log("Book added: ", data)
+            navigate('/library')
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
 return (
     <div className='book-data'>
         {data?.map((items) => (
@@ -37,7 +63,7 @@ return (
                     </a>
                     <h3> {items.volumeInfo?.authors}</h3>
                     <p> {items.volumeInfo?.description}</p>
-                    <button> Add to Library </button>
+                    <button onClick = {() => addBookToLibrary(items)}> Add to Library </button>
                 </div>
             </div>
     )
