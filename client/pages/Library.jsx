@@ -1,9 +1,12 @@
 import './Library.css'
 
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Library ( { username} ) {
+
     const [books, setBooks] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         const getBook= async() => {
@@ -17,6 +20,10 @@ export default function Library ( { username} ) {
         }
         getBook()
     }, []) 
+
+    const handleReview = (book) => {
+        navigate('/reviews/new', { state: { title: book.title, author: book.authors } });
+    }
 
     const handleDelete = async(id) => {
         try {
@@ -45,7 +52,7 @@ export default function Library ( { username} ) {
                             {/* <p> {book.description} </p> */}
                         <div className = 'lib-buttons'>
                             <button onClick = {() => handleDelete(book._id)} className='delete-button'> Delete </button> 
-                            <button className='review-button'> Review Book </button> 
+                            <button onClick={() => handleReview(book)} className='review-button'> Review Book </button>
                         </div> 
                         </div>
                     </div>   

@@ -92,7 +92,8 @@
     .review-det {
         border: 1px dotted black;
         padding: 20px; 
-        padding-right: 400px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .back-button {

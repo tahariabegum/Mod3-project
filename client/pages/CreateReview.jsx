@@ -1,20 +1,22 @@
 import './CreateReview.css'
 
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
-let emptyForm = {
-    title: '',
-    author: '',
-    genre: '',
-    pages: '',
-    rating: 0,
-    review: ''
-}
 
 export default function CreateReview ({ username }) {
 
     const navigate = useNavigate() 
+    const location = useLocation()
+
+    let emptyForm = {
+        title: location.state?.title || '',
+        author: location.state?.author || '',
+        genre: '',
+        pages: '',
+        rating: 0,
+        review: ''
+    }
 
     let [form, setForm] = useState(emptyForm)
 
