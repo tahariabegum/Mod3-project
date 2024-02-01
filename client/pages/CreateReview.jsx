@@ -1,6 +1,6 @@
 import './CreateReview.css'
-import customAxiosAndBaseURL from '../src/Api'
-import axios from 'axios'
+// import customAxiosAndBaseURL from '../src/Api'
+// import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -28,7 +28,7 @@ export default function CreateReview ({ username }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await customAxiosAndBaseURL.get( '/api/reviews', {
+            const response = await fetch('/api/reviews', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export default function CreateReview ({ username }) {
             });
             navigate('/reviews')
         } catch (err) {
-            console.log('Unable to create review: ', err.message)
+            console.log('Unable to create review: ', err.response.message)
         }
     }
 

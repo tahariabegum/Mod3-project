@@ -1,6 +1,6 @@
 import './Review.css'
-import customAxiosAndBaseURL from '../src/Api'
-import axios from 'axios'
+// import customAxiosAndBaseURL from '../src/Api'
+// import axios from 'axios'
 
 
 import { useState, useEffect } from 'react'
@@ -14,7 +14,7 @@ export default function ReviewList({ username }) {
     useEffect(() => {
         const getReviews = async () => {
             try {
-                const response = await customAxiosAndBaseURL.get(`/api/reviews`)
+                const response = await fetch(`/api/reviews`)
                 const data = await response.json()
                 setReviews(data)
             } catch (err) {

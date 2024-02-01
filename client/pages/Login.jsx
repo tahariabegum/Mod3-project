@@ -1,6 +1,6 @@
-import baseURL from '../src/Api'
+// import baseURL from '../src/Api'
 import axios from 'axios'
-import customAxiosAndBaseURL from '../src/Api';
+// import customAxiosAndBaseURL from '../src/Api';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
@@ -33,7 +33,7 @@ export default function Login ({ setUser }) {
 
             localStorage.setItem("token", token)
 
-            const userResponse = await customAxiosAndBaseURL.get('/api/users' , {
+            const userResponse = await axios.get('/api/users' , {
                 headers: {
                     Authorization: token
                 }
