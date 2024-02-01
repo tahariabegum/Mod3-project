@@ -1,3 +1,5 @@
+import './CreateReview.css'
+
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -38,7 +40,9 @@ export default function CreateReview ({ username }) {
 
     return (
         <div className = 'create-page'>
-            <h2 className='create-title'> Create New Book Review </h2>
+            <div className ='create-title-cont'>
+                <h2 className='create-title'> Create New Book Review </h2>
+            </div>
             <form className= 'create-form' onSubmit = {handleSubmit}>
 
                 <label> Book Title: 

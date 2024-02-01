@@ -71,6 +71,7 @@ button {
   border-radius: 60px;
   color: black;
   margin: 10px ; 
+  
 }
 
 
@@ -211,52 +212,7 @@ label {
   cursor: pointer;
 }
 
-.create-page {
-  background-color: white;
-  opacity: 0.7;
-  max-width: 900px; 
-  margin: auto;
-  padding: 10px; 
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 60px;
-  display: flex; 
-  justify-content: center;
-}
 
-.create-title {
-  font-size: 40px;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  font-family: Helvetica , sans-serif;
-}
-
-.create-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%
-}
-
-.create-form label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.create-form input,
-.create-form select,
-.create-form textarea {
-  flex: 1;
-  margin-left: 10px; 
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.create-form textarea {
-  height: 100px; 
-}
 
 
 
