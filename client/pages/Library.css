@@ -16,7 +16,9 @@
     background-color: white;
   }
 
-
+.book-title {
+    color: #5c0f0f;
+}
 
 .lib-data {
     display: flex; 
@@ -35,7 +37,7 @@
     background-color: white;
     opacity: 0.7;
     border: 1px solid black; 
-    border-radius: 60px;
+    border-radius: 20px;
     margin-bottom: 20px ;
     padding: 10px; 
   }
@@ -45,7 +47,7 @@
     /* margin-right: 25px;
     margin-top: 20px;
     margin-left: 30px; */
-    border-radius: 40px; 
+    border-radius: 20px; 
   }
   
   .lib-det {
@@ -63,6 +65,15 @@
     display: flex; 
     justify-content: center;
     flex-direction: row; 
+  }
+
+  .delete-button,
+  .review-button {
+    margin-top: 20px;
+    border-radius: 5px; 
+    cursor: pointer; 
+    background-color: #5c0f0f ;
+    color: white;
   }
 
   .lib-det h2, .lib-det p {

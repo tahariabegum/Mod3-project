@@ -39,13 +39,13 @@ export default function Library ( { username} ) {
                         <img src = {book.thumbnail} alt = {book.title} className = 'book-img'/>
                         <div className = 'lib-det'>
                             <a href = {book.previewLink} >
-                                <h2> {book.title} </h2>
+                                <h2 className='book-title'> {book.title} </h2>
                             </a>
                             <p> {book.authors} </p>
                             {/* <p> {book.description} </p> */}
                         <div className = 'lib-buttons'>
                             <button onClick = {() => handleDelete(book._id)} className='delete-button'> Delete </button> 
-                            <button> Review Book </button> 
+                            <button className='review-button'> Review Book </button> 
                         </div> 
                         </div>
                     </div>   

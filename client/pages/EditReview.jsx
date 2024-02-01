@@ -1,4 +1,4 @@
-import './EditReview.css'
+import './CreateReview.css'
 
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
@@ -54,11 +54,11 @@ export default function EditReview() {
 
 
     return (
-        <div className = 'edit-page'>
-            <div className = 'edit-title-cont'>
-                <h2 className = 'edit-title'> Edit Book Review </h2>
+        <div className = 'create-page'>
+            <div className = 'create-title-cont'>
+                <h2 className = 'create-title'> Edit Book Review </h2>
             </div>
-            <form className= 'edit-form' onSubmit = {handleSubmit}>
+            <form className= 'create-form' onSubmit = {handleSubmit}>
             <div className = 'groups'>
                 <label> Book Title: </label>
                 <input 
@@ -121,9 +121,12 @@ export default function EditReview() {
                     value = {form.review}
                 >
                 </textarea>
-            </div>
                 <br/>
-                <button type = "submit"> Update Review </button>
+            </div>
+            <div className='edit-buttons'>  
+                <button onClick = {() => navigate('/reviews')} className = "cancel-button"> Cancel </button>
+                <button type = "submit" className = "submit-button"> Update Review </button>
+            </div>
             </form>
         </div>
     )

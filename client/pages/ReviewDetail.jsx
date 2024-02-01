@@ -37,7 +37,7 @@ export default function ReviewDetail({ username }) {
                 <p> {review.review} </p>
             </div>
                 <div>
-                    <button onClick = {() => navigate('/reviews')}className='back-button'> Back </button>
+                    <button onClick = {() => navigate('/reviews')} className='back-button'> Back </button>
                 </div>
         </div>
     )

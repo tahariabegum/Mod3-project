@@ -107,7 +107,10 @@ export default function CreateReview ({ username }) {
                 </div>
                 
                 <br/>
-                <button type = "submit" className='submit-button'> Submit Review </button>
+                <div className = 'edit-buttons'>
+                    <button onClick = {() => navigate('/reviews')} className = "cancel-button"> Cancel </button>
+                    <button type = "submit" className='submit-button'> Submit Review </button>
+                </div>
             </form>
         </div>
     )
