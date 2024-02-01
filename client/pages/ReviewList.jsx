@@ -1,5 +1,5 @@
 import './Review.css'
-import baseURL from '../Api'
+import baseURL from '../src/Api'
 
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'

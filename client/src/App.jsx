@@ -1,5 +1,5 @@
 import axios from 'axios'
-import baseURL from '../Api'
+import baseURL from './Api'
 
 import { useState, useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
