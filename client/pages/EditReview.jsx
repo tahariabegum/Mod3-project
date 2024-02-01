@@ -22,7 +22,7 @@ export default function EditReview() {
     useEffect(() => {
         const getReviews = async () => {
             try {
-                const response = await fetch(`/api/reviews/${id}`)
+                const response = await axios.get(baseURL + `/api/reviews/${id}`)
                 const data = await response.json()
                 setForm(data)
             } catch (err) {

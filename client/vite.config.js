@@ -8,10 +8,10 @@ export default defineConfig({
     proxy: {
       // '/auth': baseURL,
       // '/api' : baseURL
-      // '/auth': 'http://localhost:8080', 
-      // '/api': 'http://localhost:8080'
-      '/auth' : 'https://book-nook-backend.onrender.com',
-      '/api' : 'https://book-nook-backend.onrender.com'
+      '/auth': 'http://localhost:8080', 
+      '/api': 'http://localhost:8080'
+      // '/auth' : 'https://book-nook-backend.onrender.com',
+      // '/api' : 'https://book-nook-backend.onrender.com'
     }
   },
   plugins: [react()],
