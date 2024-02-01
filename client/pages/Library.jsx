@@ -1,5 +1,6 @@
 import './Library.css'
 import baseURL from '../src/Api'
+import axios from 'axios'
 
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -12,7 +13,7 @@ export default function Library ( { username} ) {
     useEffect(() => {
         const getBook= async() => {
             try {
-                const response = await fetch (baseURL + `/api/library`)
+                const response = await axios.get (baseURL + `/api/library`)
                 const data = await response.json()
                 setBooks(data)
             } catch (err) {
