@@ -44,64 +44,70 @@ export default function CreateReview ({ username }) {
                 <h2 className='create-title'> Create New Book Review </h2>
             </div>
             <form className= 'create-form' onSubmit = {handleSubmit}>
-
-                <label> Book Title: 
+                <div className='groups'>
+                <label> Book Title: </label>
                 <input 
                     type = "text" 
                     name = "title"
                     onChange = {handleChange} 
                     value = {form.title}
                 />
-                </label>
+                </div>
+              
+                <div className='groups'>
+                    <label> Author: </label>
+                    <input 
+                        type = "text" 
+                        name = "author"
+                        onChange = {handleChange} 
+                        value = {form.author}
+                    />
+                </div>
 
-                <label> Author: 
-                <input 
-                    type = "text" 
-                    name = "author"
-                    onChange = {handleChange} 
-                    value = {form.author}
-                />
-                </label>
 
-                <label> Genre: 
-                <input 
-                    type = "text" 
-                    name = "genre"
-                    onChange = {handleChange} 
-                    value = {form.genre}
-                />
-                </label>
+                <div className='groups'>
+                    <label> Genre: </label>
+                    <input 
+                        type = "text" 
+                        name = "genre"
+                        onChange = {handleChange} 
+                        value = {form.genre}
+                    />
+                </div>
 
-                <label> Pages: 
-                <input 
-                    type = "number" 
-                    name = "pages"
-                    onChange = {handleChange} 
-                    value = {form.pages}
-                />
-                </label>
+                <div className='groups'>
+                    <label> Pages: </label>
+                    <input 
+                        type = "number" 
+                        name = "pages"
+                        onChange = {handleChange} 
+                        value = {form.pages}
+                    />
+                </div>
+                <div className='groups'>
+                    <label> Rating:  </label>
+                    <input 
+                        type = "number" 
+                        name = "rating"
+                        onChange = {handleChange} 
+                        value = {form.rating}
+                        min='1' 
+                        max='5'
+                    />
+                </div>
 
-                <label> Rating: 
-                <input 
-                    type = "number" 
-                    name = "rating"
-                    onChange = {handleChange} 
-                    value = {form.rating}
-                    min='1' 
-                    max='5'
-                />
-                </label>
-
-                <label> Review: 
-                <textarea
+                <div className='groups'>
+                    <label> Review: </label>
+                    <textarea
                     name = "review"
                     onChange = {handleChange} 
                     value = {form.review}
-                >
-                </textarea>
-                </label>
+                    >
+                    </textarea>
+                </div>
+                
                 <br/>
-                <button type = "submit"> Submit Review </button>
+                <button type = "submit" className='submit-button'> Submit Review </button>
             </form>
         </div>
     )

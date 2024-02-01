@@ -1,4 +1,4 @@
-.create-page {
+.edit-page {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -7,7 +7,7 @@
 }
 
 
-.create-title-cont {
+.edit-title-cont {
     background-color: white;
     text-align: center;
     opacity: 0.7;
@@ -16,14 +16,14 @@
     width: 100%;
 }
 
-.create-title {
+.edit-title {
     font-size: 40px;
     font-family: Helvetica , sans-serif;
     margin: 0; 
     color: maroon;
 }
   
-.create-form {
+.edit-form {
     margin-top: 30px; 
     display: flex;
     flex-direction: column;
@@ -45,21 +45,21 @@
     margin-bottom: 15px; 
     }
   
-  .create-form label { 
+  .edit-form label { 
     flex-basis: 20%;
     /* margin-right: 10px;  */
   }
   
-  .create-form input,
-  .create-form select,
-  .create-form textarea {
+  .edit-form input,
+  .edit-form select,
+  .edit-form textarea {
     flex-basis: 80%; 
     padding: 10px; 
     border: 1px solid; 
     border-radius: 4px
   }
   
-  .create-form textarea {
+  .edit-form textarea {
     height: 100px; 
 
   }

@@ -1,3 +1,5 @@
+import './EditReview.css'
+
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
@@ -53,46 +55,54 @@ export default function EditReview() {
 
     return (
         <div className = 'edit-page'>
-            <h2 className = 'edit-title'> Edit Book Review </h2>
+            <div className = 'edit-title-cont'>
+                <h2 className = 'edit-title'> Edit Book Review </h2>
+            </div>
             <form className= 'edit-form' onSubmit = {handleSubmit}>
-
-                <label> Book Title: 
+            <div className = 'groups'>
+                <label> Book Title: </label>
                 <input 
                     type = "text" 
                     name = "title"
                     onChange = {handleChange} 
                     value = {form.title}
                 />
-                </label>
-
-                <label> Author: 
+                
+            </div>
+            <div className = 'groups'>
+                <label> Author: </label>
                 <input 
                     type = "text" 
                     name = "author"
                     onChange = {handleChange} 
                     value = {form.author}
                 />
-                </label>
+                
+            </div>
+            
+            <div className = 'groups'>
 
-                <label> Genre: 
+                <label> Genre: </label>
                 <input 
                     type = "text" 
                     name = "genre"
                     onChange = {handleChange} 
                     value = {form.genre}
                 />
-                </label>
-
-                <label> Pages: 
+                
+            </div>
+            <div className = 'groups'>
+                <label> Pages: </label>
                 <input 
                     type = "number" 
                     name = "pages"
                     onChange = {handleChange} 
                     value = {form.pages}
                 />
-                </label>
-
-                <label> Rating: 
+                
+            </div>
+            <div className = 'groups'>
+                <label> Rating: </label>
                 <input 
                     type = "number" 
                     name = "rating"
@@ -101,16 +111,17 @@ export default function EditReview() {
                     min='1' 
                     max='5'
                 />
-                </label>
-
-                <label> Review: 
+                
+            </div>
+            <div className = 'groups'>
+                <label> Review: </label>
                 <textarea
                     name = "review"
                     onChange = {handleChange} 
                     value = {form.review}
                 >
                 </textarea>
-                </label>
+            </div>
                 <br/>
                 <button type = "submit"> Update Review </button>
             </form>

@@ -45,7 +45,7 @@ export default function ReviewList({ username }) {
                         <h2 className='review-list-title'> {review.title} </h2>
                     </Link>
                     <p> By: {review.author} </p>
-                    <p> {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)} </p>
+                    <p className = 'stars'> {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)} </p>
                     <div className = 'review-buttons'>
                         <button onClick = {() => navigate(`/reviews/${review._id}/edit`)} className='review-button'> Edit </button>
                         <button onClick = {() => handleDelete(review._id)} className='review-button'> Delete </button>
