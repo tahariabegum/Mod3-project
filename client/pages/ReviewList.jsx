@@ -42,7 +42,7 @@ export default function ReviewList({ username }) {
             {reviews.map((review) => (
                 <div key = {review._id} className = 'review-content'>
                     <Link to = {`/reviews/${review._id}`}>
-                        <h2> {review.title} </h2>
+                        <h2 className='review-list-title'> {review.title} </h2>
                     </Link>
                     <p> By: {review.author} </p>
                     <p> {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)} </p>

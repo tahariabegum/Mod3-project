@@ -29,15 +29,16 @@ export default function ReviewDetail({ username }) {
                 <p className = 'review-by'> By: {username} </p>
             </div>
             <div className = 'review-det'>
+                <p> Title: {review.title} </p>
                 <p> Author: {review.author} </p>
                 <p> Genre: {review.genre} </p>
                 <p> Pages: {review.pages} </p>
                 <p className='review-rating'> Rating: {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</p>
                 <p> {review.review} </p>
+            </div>
                 <div>
                     <button onClick = {() => navigate('/reviews')}className='back-button'> Back </button>
                 </div>
-            </div>
         </div>
     )
 }
