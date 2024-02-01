@@ -1,5 +1,5 @@
 import axios from 'axios'
-import customAxiosAndBaseURL from '../src/Api'
+import customAxiosAndBaseURL from '../Api'
 
 import { useState } from 'react' 
 import { useNavigate } from 'react-router-dom'
