@@ -1,5 +1,6 @@
 import baseURL from '../src/Api'
 import axios from 'axios'
+import customAxiosAndBaseURL from '../src/Api';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
@@ -22,7 +23,7 @@ export default function Login ({ setUser }) {
         e.preventDefault()
 
         try {
-            const response = await axios.post(baseURL + '/auth/login', form)
+            const response = await axios.post('/auth/login', form)
             const token = response.data.token
 
             if (!token) {
@@ -32,7 +33,7 @@ export default function Login ({ setUser }) {
 
             localStorage.setItem("token", token)
 
-            const userResponse = await axios.get('/api/users' , {
+            const userResponse = await customAxiosAndBaseURL.get('/api/users' , {
                 headers: {
                     Authorization: token
                 }

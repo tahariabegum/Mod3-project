@@ -1,6 +1,6 @@
 import './CreateReview.css'
 import axios from 'axios'
-import baseURL from '../src/Api'
+import customAxiosAndBaseURL from '../src/Api'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
@@ -22,7 +22,7 @@ export default function EditReview() {
     useEffect(() => {
         const getReviews = async () => {
             try {
-                const response = await axios.get(baseURL + `/api/reviews/${id}`)
+                const response = await customAxiosAndBaseURL.get(baseURL + `/api/reviews/${id}`)
                 const data = await response.json()
                 setForm(data)
             } catch (err) {
@@ -40,7 +40,7 @@ export default function EditReview() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.get (baseURL + `/api/reviews/${id}`, {
+            const response = await customAxiosAndBaseURL.get (`/api/reviews/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,5 +1,5 @@
 import './CreateReview.css'
-import baseURL from './src/Api'
+import customAxiosAndBaseURL from '../src/Api'
 import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -28,7 +28,7 @@ export default function CreateReview ({ username }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.get(baseURL + '/api/reviews', {
+            const response = await customAxiosAndBaseURL.get( '/api/reviews', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,5 +1,6 @@
 import './Review.css'
-import baseURL from '../src/Api'
+import customAxiosAndBaseURL from '../src/Api'
+
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -13,7 +14,7 @@ export default function ReviewDetail({ username }) {
     useEffect(() => {
         const getReview = async() => {
             try {
-                const response = await axios.get(baseURL + `/api/reviews/${id}`)
+                const response = await customAxiosAndBaseURL.get(`/api/reviews/${id}`)
                 const data = await response.json()
                 setReview(data)
             } catch (err) {
