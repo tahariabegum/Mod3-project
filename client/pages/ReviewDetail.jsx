@@ -33,7 +33,7 @@ export default function ReviewDetail({ username }) {
                 <p> Author: {review.author} </p>
                 <p> Genre: {review.genre} </p>
                 <p> Pages: {review.pages} </p>
-                <p className='review-rating'> Rating: {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</p>
+                <p> Rating: <span className='star'>{'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}</span></p>
                 <p> {review.review} </p>
             </div>
                 <div>

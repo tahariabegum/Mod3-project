@@ -3,7 +3,7 @@
     .review-title-cont {
         text-align: center;
         background-color: white;
-        opacity: 0.7;
+        opacity: 0.8;
         border-radius: 60px;
         padding: 20px;
         width: 100%;
@@ -29,7 +29,7 @@
 
     .review-content {
         background-color: white;
-        opacity: 0.8; 
+        opacity: 0.9; 
         border-radius: 5px; 
         border: 1px solid black; 
         padding: 20px; 
@@ -65,9 +65,15 @@
         align-items: flex-end;
 
     }
+    .star {
+    color: #FDCC0D;
+    font-size: 20px;
+    }
+
 
     .stars{
-        color: #5c0f0f;
+        color: #FDCC0D;
+        font-size: 20px; 
     }
 
     
@@ -76,7 +82,7 @@
 
     .review-details {
         background-color: white;
-        opacity: 0.7;
+        opacity: 0.9;
         display: flex;
         align-items: flex-start; 
         flex-direction: column;
