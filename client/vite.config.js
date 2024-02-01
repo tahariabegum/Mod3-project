@@ -6,10 +6,10 @@ import baseURL from './Api.js'
 export default defineConfig({
   server: {
     proxy: {
-      '/auth': baseURL,
-      '/api' : baseURL
-      // '/auth': 'http://localhost:8080', 
-      // '/api': 'http://localhost:8080'
+      // '/auth': baseURL,
+      // '/api' : baseURL
+      '/auth': 'http://localhost:8080', 
+      '/api': 'http://localhost:8080'
       // '/auth' : 'https://book-nook-backend.onrender.com',
       // '/api' : 'https://book-nook-backend.onrender.com'
     }

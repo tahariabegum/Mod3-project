@@ -1,4 +1,5 @@
 import axios from 'axios'
+import baseURL from '../Api'
 
 import { useState } from 'react' 
 import { useNavigate } from 'react-router-dom'
@@ -24,7 +25,7 @@ export default function Register ({ setUser }) {
 
         try {
             
-            const response = await axios.post('/auth/register', form)
+            const response = await axios.post(baseURL + '/auth/register', form)
             console.log(response)
             const token = response.data?.token 
 

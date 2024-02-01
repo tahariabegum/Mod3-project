@@ -1,4 +1,5 @@
 import './Review.css'
+import baseURL from '../Api'
 
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
@@ -11,7 +12,7 @@ export default function ReviewList({ username }) {
     useEffect(() => {
         const getReviews = async () => {
             try {
-                const response = await fetch(`/api/reviews`)
+                const response = await fetch(baseURL + `/api/reviews`)
                 const data = await response.json()
                 setReviews(data)
             } catch (err) {

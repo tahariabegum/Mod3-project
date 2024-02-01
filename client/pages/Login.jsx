@@ -1,4 +1,4 @@
-
+import baseURL from '../Api'
 import axios from 'axios'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
@@ -22,7 +22,7 @@ export default function Login ({ setUser }) {
         e.preventDefault()
 
         try {
-            const response = await axios.post('/auth/login', form)
+            const response = await axios.post(baseURL + '/auth/login', form)
             const token = response.data.token
 
             if (!token) {

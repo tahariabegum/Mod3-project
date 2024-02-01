@@ -1,4 +1,5 @@
 import './CreateReview.css'
+import baseURL from '../Api'
 
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -27,7 +28,7 @@ export default function CreateReview ({ username }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch ('/api/reviews', {
+            const response = await fetch (baseURL + '/api/reviews', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

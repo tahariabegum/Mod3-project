@@ -1,5 +1,5 @@
 import './CreateReview.css'
-
+import baseURL from '../Api'
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 
@@ -39,7 +39,7 @@ export default function EditReview() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch (`/api/reviews/${id}`, {
+            const response = await fetch (baseURL + `/api/reviews/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

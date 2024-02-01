@@ -1,4 +1,5 @@
 import axios from 'axios'
+import baseURL from '../Api'
 
 import { useState, useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
@@ -33,7 +34,7 @@ function App() {
   async function getUser(token) {
     
     try {
-      const response = await axios.get('/api/users', {
+      const response = await axios.get(baseURL + '/api/users', {
         headers: {
           Authorization: token
         }
