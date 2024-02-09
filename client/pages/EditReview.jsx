@@ -1,4 +1,5 @@
 import './CreateReview.css'
+import baseURL from '../src/Api'
 import axios from 'axios'
 // import customAxiosAndBaseURL from '../src/Api'
 import { useState, useEffect } from 'react'
@@ -22,7 +23,7 @@ export default function EditReview() {
     useEffect(() => {
         const getReviews = async () => {
             try {
-                const response = await fetch(`/api/reviews/${id}`)
+                const response = await fetch(baseURL + `/api/reviews/${id}`)
                 const data = await response.json()
                 setForm(data)
             } catch (err) {
@@ -40,7 +41,7 @@ export default function EditReview() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch (`/api/reviews/${id}`, {
+            const response = await fetch (baseURL + `/api/reviews/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

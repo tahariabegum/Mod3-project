@@ -1,4 +1,5 @@
 import './CreateReview.css'
+import baseURL from '../src/Api'
 // import customAxiosAndBaseURL from '../src/Api'
 // import axios from 'axios'
 import { useState } from 'react'
@@ -28,7 +29,7 @@ export default function CreateReview ({ username }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch('/api/reviews', {
+            const response = await fetch(baseURL + '/api/reviews', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

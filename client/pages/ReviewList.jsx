@@ -1,7 +1,7 @@
 import './Review.css'
 // import customAxiosAndBaseURL from '../src/Api'
 // import axios from 'axios'
-
+import baseURL from '../src/Api'
 
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
@@ -14,7 +14,7 @@ export default function ReviewList({ username }) {
     useEffect(() => {
         const getReviews = async () => {
             try {
-                const response = await fetch(`/api/reviews`)
+                const response = await fetch(baseURL + `/api/reviews`)
                 const data = await response.json()
                 setReviews(data)
             } catch (err) {
@@ -26,7 +26,7 @@ export default function ReviewList({ username }) {
 
     const handleDelete = async(id) => {
         try {
-            await fetch(`/api/reviews/${id}` , {
+            await fetch(baseURL + `/api/reviews/${id}` , {
                 method: 'DELETE'
             })
             setReviews(reviews.filter((review) => review._id !==id))

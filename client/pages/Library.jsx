@@ -1,4 +1,5 @@
 import './Library.css'
+import baseURL from '../src/Api'
 // import customAxiosAndBaseURL from '../src/Api'
 import axios from 'axios'
 
@@ -13,7 +14,7 @@ export default function Library ( { username} ) {
     useEffect(() => {
         const getBook= async() => {
             try {
-                const response = await fetch (`/api/library`)
+                const response = await fetch (baseURL + `/api/library`)
                 const data = await response.json()
                 setBooks(data)
             } catch (err) {
@@ -29,7 +30,7 @@ export default function Library ( { username} ) {
 
     const handleDelete = async(id) => {
         try {
-            await fetch(`/api/library/${id}` , {
+            await fetch(baseURL + `/api/library/${id}` , {
                 method: 'DELETE'
             })
             setBooks(books.filter((book) => book._id !==id))
